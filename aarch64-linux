@@ -48,5 +48,5 @@ qt:with_icu=False
 
 qt:with_doubleconversion=True
 qt:opengl=es2
-qt:GUI=True
-qt:widgets=True
+qt:GUI=False
+qt:widgets=False
