@@ -1,0 +1,22 @@
+name: install qt conan package
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   
+    steps:
+    - uses: actions/checkout@v1
+    - name: setup python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+    - name: install tools
+      run: sudo apt install gcc g++ make cmake ninja-build gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+    - name: conan configure
+      run: |
+        pip install conan
+        conan --version
+        conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+    - name: conan install
+      run: conan install . --profile aarch64-linux --build=missing 

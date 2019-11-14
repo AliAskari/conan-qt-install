@@ -1,0 +1,7 @@
+[requires]
+zlib/1.2.11@conan/stable
+bzip2/1.0.8@conan/stable
+qt/5.13.2@bincrafters/stable
+
+[generators]
+cmake
